@@ -263,6 +263,40 @@ export const test = base.extend({
 });
 ```
 
+## 📦 Models - Definir Tipos de Datos
+
+### **Product.ts** - Interface
+
+````typescript
+export interface Product {
+  name: string;
+  supplierName: string;
+  categoryName: string;
+  unitsInStock: number;
+  unitsOnOrder: number;
+  reorderLevel: number;
+}
+````
+---
+
+**¿Por qué un interface?**
+
+```typescript
+// ✅ Con interface - Tenemos validación:
+const product: Product = {
+  name: "Laptop",
+  supplierName: "Tech Corp",
+  // ... sin falta campos, TypeScript avisa
+
+// ❌ Sin interface - Podemos olvidar campos:
+const product = {
+  name: "Laptop"
+  // Olvidamos otros campos, error en tests
+}
+```
+
+---
+
 ## 🔧 Fixtures en Playwright - Explicación Detallada
 
 ### ¿Qué son los Fixtures?
