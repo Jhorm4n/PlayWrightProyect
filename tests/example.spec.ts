@@ -41,4 +41,13 @@ productTest.describe('Product Management', () => {
     await productPage.addProduct(product);
     await productPage.searchAndVerifyProduct(product.name);
   });
+
+  productTest('Delete producto', async ({ productPage }) => {
+    const product = await createRandomProduct();
+    
+    await productPage.addProduct(product);
+    await productPage.searchAndVerifyProduct(product.name);
+
+    //pending implementation of delete functionality in ProductPage
+  });
 });
