@@ -1,0 +1,6 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="16.345943000000204">
+<testsuite name="example.spec.ts" timestamp="2026-04-19T02:04:03.006Z" hostname="chromium" tests="1" failures="0" skipped="0" time="11.648" errors="0">
+<testcase name="Product Management › Add producto" classname="example.spec.ts" time="11.648">
+</testcase>
+</testsuite>
+</testsuites>
