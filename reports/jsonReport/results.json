@@ -81,7 +81,7 @@
         {
           "title": "Product Management",
           "file": "example.spec.ts",
-          "line": 56,
+          "line": 6,
           "column": 6,
           "specs": [
             {
@@ -97,10 +97,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 10,
+                      "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10218,
+                      "duration": 10261,
                       "errors": [],
                       "stdout": [
                         {
@@ -110,12 +110,12 @@
                           "text": "Logging in with password: ********\n"
                         },
                         {
-                          "text": "Adding product: producto prueba 0DTSef - Supplier: Aux joyeux ecclésiastiques - Category: Produce \n      - UnitsInStock: 9 - UnitsOnOrder: 6 - ReorderLevel: 3\n"
+                          "text": "Adding product: producto prueba wKqvQu - Supplier: Aux joyeux ecclésiastiques - Category: Produce \n      - UnitsInStock: 5 - UnitsOnOrder: 1 - ReorderLevel: 4\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-30T22:42:46.298Z",
+                      "startTime": "2026-04-30T22:56:31.622Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -125,8 +125,8 @@
               ],
               "id": "a30a6eba6312f6b87ea5-b66d503be58beaeb06c3",
               "file": "example.spec.ts",
-              "line": 57,
-              "column": 3
+              "line": 7,
+              "column": 14
             },
             {
               "title": "Delete producto",
@@ -141,10 +141,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 11,
+                      "workerIndex": 13,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 11362,
+                      "duration": 11287,
                       "errors": [],
                       "stdout": [
                         {
@@ -154,12 +154,12 @@
                           "text": "Logging in with password: ********\n"
                         },
                         {
-                          "text": "Adding product: producto prueba uKY9t7 - Supplier: Aux joyeux ecclésiastiques - Category: Produce \n      - UnitsInStock: 3 - UnitsOnOrder: 1 - ReorderLevel: 1\n"
+                          "text": "Adding product: producto prueba sYRHsJ - Supplier: Aux joyeux ecclésiastiques - Category: Produce \n      - UnitsInStock: 6 - UnitsOnOrder: 4 - ReorderLevel: 2\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-30T22:42:46.308Z",
+                      "startTime": "2026-04-30T22:56:31.662Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -169,8 +169,8 @@
               ],
               "id": "a30a6eba6312f6b87ea5-ea9a869c108d3e542088",
               "file": "example.spec.ts",
-              "line": 64,
-              "column": 3
+              "line": 14,
+              "column": 14
             }
           ]
         }
@@ -179,8 +179,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-30T22:42:44.680Z",
-    "duration": 13439.353999999934,
+    "startTime": "2026-04-30T22:56:29.735Z",
+    "duration": 13695.293999999994,
     "expected": 2,
     "skipped": 0,
     "unexpected": 0,

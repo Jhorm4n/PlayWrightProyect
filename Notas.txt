@@ -1,0 +1,11 @@
+Comandos para ejecucion por primera vez: 
+npm init -y
+npm cache clean --force
+npm i -D playwright @playwright/test
+npx playwright install
+npm i --save-dev @types/node
+
+Ejecutar tests
+npx playwright test --headed
+npx playwright test --update-snapshots
+npx playwright test --debug
