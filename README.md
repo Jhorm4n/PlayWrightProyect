@@ -49,9 +49,12 @@ cd playwright-course.jm-consultant
 npm install
 ```
 
-### 3. Instalar navegadores de Playwright
+### 3. Agregar variables de entorno
+Copia el archivo `.env.example` a `.env` y actualiza `BASE_URL`, `APP_USER` y `APP_PASSWORD`.
+
+### 4. Instalar navegadores de Playwright
 ```bash
-npx playwright install
+npm run prepare
 ```
 
 ## 🏗️ Arquitectura del Proyecto

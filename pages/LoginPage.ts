@@ -1,22 +1,28 @@
-import { expect } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { BasePage } from './BasePage';
+import { c } from '@faker-js/faker/dist/airline-eVQV6kbz';
 
 export class LoginPage extends BasePage {
-  private readonly usernameInput = 'input[name="Username"]';
-  private readonly passwordInput = 'input[name="Password"]';
-  private readonly loginButton = '#LoginPanel0_LoginButton';
-  private readonly startSharpHeading = '.s-form-title-logo';
-  private readonly contentHeader = '.content-header';
+  private readonly usernameInput = 'input[id="LoginPanel0_Username"]';
+  private readonly passwordInput = 'input[id="LoginPanel0_Password"]';
+  private readonly submitButton = 'button[id="LoginPanel0_LoginButton"]';
 
-  async goto(baseUrl: string): Promise<void> {
-    await this.page.goto(baseUrl);
-    await expect(this.page.locator(this.startSharpHeading)).toBeVisible();
+  constructor(page: Page) {
+    super(page);
+  }
+
+  async gotoLogin(): Promise<void> {
+    await this.goto('/');
+    await this.waitForPageLoad();
   }
 
   async login(username: string, password: string): Promise<void> {
-    await this.page.locator(this.usernameInput).fill(username);
-    await this.page.locator(this.passwordInput).fill(password);
-    await this.page.locator(this.loginButton).click();
-    await expect(this.page.locator(this.contentHeader)).toBeVisible();
+    console.log(`Logging in with user: ${username}`);
+    console.log(`Logging in with password: ${'*'.repeat(password.length)}`);
+    await this.page.waitForSelector(this.usernameInput);
+    await this.fill(this.usernameInput, username);
+    await this.fill(this.passwordInput, password);
+    await this.click(this.submitButton);
+    await this.waitForPageLoad();
   }
 }

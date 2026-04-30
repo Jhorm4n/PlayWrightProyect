@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "test:headed": "playwright test --headed"
+    "test:headed": "playwright test --headed",
+    "test:report": "npx playwright show-report",
+    "prepare": "npx playwright install --with-deps"
   },
   "keywords": [],
   "author": "",
