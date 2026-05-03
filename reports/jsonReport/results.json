@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 2
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 2
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
@@ -72,20 +72,20 @@
   },
   "suites": [
     {
-      "title": "example.spec.ts",
-      "file": "example.spec.ts",
+      "title": "productManagement.spec.ts",
+      "file": "productManagement.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Product Management",
-          "file": "example.spec.ts",
+          "title": "Feature: Product Management",
+          "file": "productManagement.spec.ts",
           "line": 6,
           "column": 6,
           "specs": [
             {
-              "title": "Add producto",
+              "title": "Given the administrator is on the Products page\n    And the administrator is on the Products page\n    When the administrator selects a product to delete\n    Then the product should be removed from the product list successfully",
               "ok": true,
               "tags": [],
               "tests": [
@@ -97,10 +97,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 12,
+                      "workerIndex": 16,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10261,
+                      "duration": 14213,
                       "errors": [],
                       "stdout": [
                         {
@@ -108,14 +108,11 @@
                         },
                         {
                           "text": "Logging in with password: ********\n"
-                        },
-                        {
-                          "text": "Adding product: producto prueba wKqvQu - Supplier: Aux joyeux ecclésiastiques - Category: Produce \n      - UnitsInStock: 5 - UnitsOnOrder: 1 - ReorderLevel: 4\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-30T22:56:31.622Z",
+                      "startTime": "2026-05-03T01:13:45.517Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -123,53 +120,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "a30a6eba6312f6b87ea5-b66d503be58beaeb06c3",
-              "file": "example.spec.ts",
-              "line": 7,
-              "column": 14
-            },
-            {
-              "title": "Delete producto",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 13,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 11287,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Logging in with user: admin\n"
-                        },
-                        {
-                          "text": "Logging in with password: ********\n"
-                        },
-                        {
-                          "text": "Adding product: producto prueba sYRHsJ - Supplier: Aux joyeux ecclésiastiques - Category: Produce \n      - UnitsInStock: 6 - UnitsOnOrder: 4 - ReorderLevel: 2\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-04-30T22:56:31.662Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "a30a6eba6312f6b87ea5-ea9a869c108d3e542088",
-              "file": "example.spec.ts",
-              "line": 14,
+              "id": "48fc8e52f594af257b5a-5dfb403fa1814c68c19c",
+              "file": "productManagement.spec.ts",
+              "line": 17,
               "column": 14
             }
           ]
@@ -179,9 +132,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-30T22:56:29.735Z",
-    "duration": 13695.293999999994,
-    "expected": 2,
+    "startTime": "2026-05-03T01:13:43.544Z",
+    "duration": 16782.982000023127,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

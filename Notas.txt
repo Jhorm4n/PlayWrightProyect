@@ -9,3 +9,6 @@ Ejecutar tests
 npx playwright test --headed
 npx playwright test --update-snapshots
 npx playwright test --debug
+
+Ejecucion codegen
+npx playwright codegen "URL"    

@@ -1,20 +1,12 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="13.695293999999995">
-<testsuite name="example.spec.ts" timestamp="2026-04-30T22:56:30.783Z" hostname="chromium" tests="2" failures="0" skipped="0" time="21.548" errors="0">
-<testcase name="Product Management › Add producto" classname="example.spec.ts" time="10.261">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="16.782982000023125">
+<testsuite name="productManagement.spec.ts" timestamp="2026-05-03T01:13:44.609Z" hostname="chromium" tests="1" failures="0" skipped="0" time="14.213" errors="0">
+<testcase name="Feature: Product Management › Given the administrator is on the Products page
+    And the administrator is on the Products page
+    When the administrator selects a product to delete
+    Then the product should be removed from the product list successfully" classname="productManagement.spec.ts" time="14.213">
 <system-out>
 <![CDATA[Logging in with user: admin
 Logging in with password: ********
-Adding product: producto prueba wKqvQu - Supplier: Aux joyeux ecclésiastiques - Category: Produce 
-      - UnitsInStock: 5 - UnitsOnOrder: 1 - ReorderLevel: 4
-]]>
-</system-out>
-</testcase>
-<testcase name="Product Management › Delete producto" classname="example.spec.ts" time="11.287">
-<system-out>
-<![CDATA[Logging in with user: admin
-Logging in with password: ********
-Adding product: producto prueba sYRHsJ - Supplier: Aux joyeux ecclésiastiques - Category: Produce 
-      - UnitsInStock: 6 - UnitsOnOrder: 4 - ReorderLevel: 2
 ]]>
 </system-out>
 </testcase>

@@ -16,6 +16,7 @@ export class ProductPage extends BasePage {
   private readonly reorderLevelInput = 'input[name="ReorderLevel"]';
   private readonly saveButton = 'xpath=//div[@data-action="save-and-close"]';
   private readonly searchInput = 'input[id*="Serenity_Demo_Northwind_ProductGrid0_QuickSearchInput"]';
+  private readonly titleFormAddProduct = 'div[class="panel-titlebar-text"]';
 
   constructor(page: Page) {
     super(page);
@@ -25,12 +26,13 @@ export class ProductPage extends BasePage {
     return `//a[@data-item-type='Demo.Northwind.Product'  and normalize-space()="${name}"]`;
   }
 
-
-  async addProduct(product: Product): Promise<void> {
-    console.log(`Adding product: ${product.name} - Supplier: ${product.supplierName} - Category: ${product.categoryName} 
-      - UnitsInStock: ${product.unitsInStock} - UnitsOnOrder: ${product.unitsOnOrder} - ReorderLevel: ${product.reorderLevel}`);
+  async goToAddProducts(): Promise<void> {
     await this.click(this.addButton);
     await this.page.waitForSelector(this.productNameInput);
+  }
+
+  async addProduct(product: Product): Promise<void> {
+    await this.goToAddProducts();
     await this.fill(this.productNameInput, product.name);
 
     await this.page.locator(this.supplierSelect).click();
@@ -38,7 +40,7 @@ export class ProductPage extends BasePage {
   
     await this.page.locator(this.categorySelect).click();
     await this.selectOption(this.categorySearch, product.categoryName);
-    
+
     await this.fill(this.unitsInStockInput, String(product.unitsInStock));
     await this.fill(this.unitsOnOrderInput, String(product.unitsOnOrder));
     await this.fill(this.reorderLevelInput, String(product.reorderLevel));
@@ -75,4 +77,18 @@ export class ProductPage extends BasePage {
   getProductRow(name: string) {
     return this.page.locator(this.rowByName(name));
   }
+
+  async updateProduct(originalName: string, updatedProduct: Product): Promise<void> {
+    await this.clickInProduct(originalName);
+    await this.page.waitForSelector(this.productNameInput);
+    await this.fill(this.productNameInput, updatedProduct.name);
+    await this.click(this.saveButton);
+    await this.waitForPageLoad();
+  }
+
+  
+  get productsTitleForm() {
+    return this.page.locator('.title-text');
+  }
+
 }
