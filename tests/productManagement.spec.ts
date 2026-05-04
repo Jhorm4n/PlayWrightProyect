@@ -30,7 +30,7 @@ test.describe('Feature: Product Management', () => {
       productPage.getProductRow(product.name)
     ).toHaveCount(0, { timeout: 10_000 });
 
-    await expect(
+    expect(
     await productPage.productsTitleForm.screenshot()
     ).toMatchSnapshot('products-list.png', {
       threshold: 0.1,

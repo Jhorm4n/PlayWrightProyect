@@ -1,41 +1,52 @@
 {
   "compilerOptions": {
-    // Versión de JavaScript que genera TypeScript (permite async/await moderno)
+    // JavaScript moderno
     "target": "ES2020",
 
-    // Usa el sistema de módulos moderno (import / export)
-    "module": "ESNext",
+    // ✅ DEBE coincidir con moduleResolution
+    "module": "CommonJS",
 
-    // Resuelve imports como Node.js
-    "moduleResolution": "Node",
+    // ✅ Resolver moderno de Node
+    //"moduleResolution": "bundler",
+    "types": ["node", "@playwright/test"],
 
-    // Activa tipado estricto (detecta errores reales antes de ejecutar)
+    // Tipado estricto
     "strict": true,
 
-    // Permite importar librerías CommonJS como ES Modules, sistemas moderno de módulos de JavaScript para import y require
+    // Permite importar CommonJS como ES Modules
     "esModuleInterop": true,
 
-    // Permite importar archivos .json
+    // Permite importar JSON
     "resolveJsonModule": true,
 
-    // No valida tipos dentro de node_modules (menos ruido, más rápido)
-    "skipLibCheck": true,
 
-    // Evita errores por mayúsculas/minúsculas en nombres de archivos (importante en CI/Linux)
+    // Evita errores de mayúsculas/minúsculas
     "forceConsistentCasingInFileNames": true,
 
-    // Librerías globales disponibles (JS moderno + DOM del navegador)
+    // APIs disponibles
     "lib": ["ES2020", "DOM"],
 
-    // Tipos globales disponibles en el proyecto (Node + Playwright)
-    "types": ["node", "@playwright/test"]
+  
+    "noEmit": true,
+    "skipLibCheck": true
+    
   },
 
-  // Carpetas y archivos que TypeScript debe analizar
+  // Archivos que TypeScript analiza
   "include": [
-    "tests",                 // specs y tests
-    "pages",                 // Page Objects
-    "models",                // modelos de datos
-    "playwright.config.ts"   // configuración de Playwright
+    "tests/**/*.spec.ts",
+    "pages",
+    "models",
+    "fixtures",
+    "utils",
+    "playwright.config.ts"
+  ],
+
+  // Archivos/carpetas que ignora
+  "exclude": [
+    "node_modules",
+    "playwright-report",
+    "test-results",
+    "reports"
   ]
 }

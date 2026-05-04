@@ -1,11 +1,14 @@
 {
-  "name": "playwright-course.jm-consultant",
+  "name": "playwright-course.jm-consultant", 
   "version": "1.0.0",
-  "description": "",
+  "description": "Un proyecto de Playwright para pruebas automatizadas",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
-    "test:headed": "playwright test --headed",
+    "validate": "npm run typecheck && npm run lint",
+    "test": "npm run validate && playwright test",
+    "test:headed": "npm run validate && playwright test --headed",
+    "lint": "eslint tests/ playwright.config.ts",
+    "typecheck": "tsc --noEmit",
     "test:report": "npx playwright show-report",
     "prepare": "npx playwright install --with-deps"
   },

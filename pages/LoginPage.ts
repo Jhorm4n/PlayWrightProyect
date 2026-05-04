@@ -1,6 +1,5 @@
 import { Page } from '@playwright/test';
 import { BasePage } from './BasePage';
-import { c } from '@faker-js/faker/dist/airline-eVQV6kbz';
 
 export class LoginPage extends BasePage {
   private readonly usernameInput = 'input[id="LoginPanel0_Username"]';

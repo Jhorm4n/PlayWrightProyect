@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 3
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
         },
         "id": "chromium",
         "name": "chromium",
@@ -65,7 +65,7 @@
     "shard": null,
     "tags": [],
     "updateSnapshots": "missing",
-    "updateSourceMethod": "3way",
+    "updateSourceMethod": "patch",
     "version": "1.59.1",
     "workers": 7,
     "webServer": null
@@ -85,6 +85,88 @@
           "column": 6,
           "specs": [
             {
+              "title": "Given the administrator navigates to the Add Product page\n    When the administrator enters valid product information\n    Then the new product should appear in the product list successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10799,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Logging in with user: admin\n"
+                        },
+                        {
+                          "text": "Logging in with password: ********\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-04T22:03:56.758Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "48fc8e52f594af257b5a-433c57e53cfccbd6d301",
+              "file": "productManagement.spec.ts",
+              "line": 8,
+              "column": 14
+            },
+            {
+              "title": "Given the administrator is on the Products page\n    And the administrator is on the Products page\n    When the administrator selects a product to delete\n    Then the product should be removed from the product list successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 12616,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Logging in with user: admin\n"
+                        },
+                        {
+                          "text": "Logging in with password: ********\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-04T22:03:56.698Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "48fc8e52f594af257b5a-5dfb403fa1814c68c19c",
+              "file": "productManagement.spec.ts",
+              "line": 17,
+              "column": 14
+            },
+            {
               "title": "Given the administrator is on the Products page\n    And the administrator is on the Products page\n    When the administrator selects a product to update\n    Then the product should be updated in the product list successfully",
               "ok": true,
               "tags": [],
@@ -97,10 +179,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 25,
-                      "parallelIndex": 0,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 10572,
+                      "duration": 12221,
                       "errors": [],
                       "stdout": [
                         {
@@ -112,7 +194,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-04T16:36:22.933Z",
+                      "startTime": "2026-05-04T22:03:56.675Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -132,9 +214,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-04T16:36:21.436Z",
-    "duration": 12814.988999962807,
-    "expected": 1,
+    "startTime": "2026-05-04T22:03:55.599Z",
+    "duration": 14289.519999999999,
+    "expected": 3,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
