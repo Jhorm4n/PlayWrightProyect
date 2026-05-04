@@ -140,7 +140,8 @@ playwright-course.jm-consultant/
 ├── 📂 reports/                    # Reportes generados (gitignore)
 ├── playwright.config.ts           # Configuración principal
 ├── package.json                   # Dependencias del proyecto
-└── README.md                      # Este archivo
+|__ tsconfig.json                  # Contrato entre el código y el compilador TypeScript.
+└── README.md                      # Archivo de Documentación
 ```
 
 ### ¿Por qué esta estructura?
@@ -515,49 +516,84 @@ file:///C://Users//jbustamanteb//Proyectos//PlayWright//playwright-course.jm-con
 ### playwright.config.ts - Explicación Línea por Línea
 
 ```typescript
-// playwright.config.ts
-import { defineConfig } from '@playwright/test';
+
+// Carga variables de entorno desde un archivo .env según el ambiente
+// Ejemplos:
+// - NODE_ENV=qa  -> .env.qa
+// - NODE_ENV=dev -> .env.dev
+// - sin NODE_ENV -> .env.qa (por defecto)
+dotenv.config({
+  path: require('path').resolve(
+    __dirname,
+    `.env.${process.env.NODE_ENV || 'qa'}`
+  ),
+});
+
+// Define la URL base de la aplicación según el ambiente
+// Si no existe BASE_URL, usa un valor por defecto
+const baseURL = process.env.BASE_URL || 'https://demo.serenity.is';
 
 export default defineConfig({
-  // ¿Dónde están los tests?
+  // Carpeta donde Playwright busca los tests
   testDir: './tests',
-  
-  // ¿Cuántos tests en paralelo?
+
+  // Tiempo máximo que puede durar una prueba completa
+  timeout: 60_000,
+
+  expect: {
+    // Tiempo máximo que espera un `expect()` antes de fallar
+    timeout: 10_000,
+  },
+
+  // Permite ejecutar tests en paralelo cuando es posible
   fullyParallel: true,
-  
-  // Si un test falla, ¿parar o continuar?
-  forbidOnly: process.env.CI === 'true',
-  
-  // ¿Reintentar tests fallidos?
+
+  // Evita que se suban tests con `test.only` a CI
+  forbidOnly: !!process.env.CI,
+
+  // Reintenta tests fallidos solo en CI (mejora estabilidad)
   retries: process.env.CI ? 2 : 0,
-  
-  // ¿Cuántos workers paralelos?
+
+  // En CI fuerza ejecución secuencial (reduce flakiness)
   workers: process.env.CI ? 1 : undefined,
-  
-  // Tipo de reporte
-  reporter: 'html',
-  
-  // Timeout global (en milisegundos)
-  timeout: 30 * 1000,
-  
-  // Timeout para expect
-  expect: { timeout: 5000 },
-  
-  // Configuración de navegadores
+
+  // Carpeta donde se guardan evidencias (screenshots, videos, traces)
+  outputDir: 'test-results',
+
+  // Configuración de reportes de resultados
+  reporter: [
+    ['list'], // salida en consola
+    ['html', { open: 'never', outputFolder: 'reports/htmlReport' }], // reporte visual
+    ['json', { outputFile: 'reports/jsonReport/results.json' }], // reporte para integraciones
+    ['junit', { outputFile: 'reports/xmlReport/results.xml' }], // reporte para CI/CD
+  ],
+
   use: {
-    // URL base de tu app
-    baseURL: 'http://localhost:3000',
-    
-    // Tamaño de ventana
+    // URL base usada por page.goto('/')
+    baseURL,
+
+    // Ejecuta en modo headless salvo que HEADLESS=false
+    headless: process.env.HEADLESS !== 'false',
+
+    // Tamaño del navegador
     viewport: { width: 1280, height: 720 },
-    
-    // Registrar videos
-    video: 'retain-on-failure',
-    
-    // Hacer screenshots
+
+    // Tiempo máximo para acciones (click, fill, etc.)
+    actionTimeout: 15_000,
+
+    // Tiempo máximo para navegaciones
+    navigationTimeout: 30_000,
+
+    // Ignora errores HTTPS (útil en entornos QA)
+    ignoreHTTPSErrors: true,
+
+    // Captura screenshot solo si el test falla
     screenshot: 'only-on-failure',
-    
-    // Traceback de acciones
+
+    // Guarda video solo si el test falla
+    video: 'retain-on-failure',
+
+    // Graba trace solo en el primer retry (debug eficiente)
     trace: 'on-first-retry',
   },
   

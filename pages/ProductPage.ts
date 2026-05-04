@@ -6,7 +6,7 @@ export class ProductPage extends BasePage {
   private readonly addButton = "xpath=//div[@data-action='add']";
   private readonly deleteButton = "xpath=//div[@data-action='delete' and contains(@class,'icon-tool-button')]";
   private readonly confirmDelete = 'xpath=//button[@class="btn btn-primary"]';
-  private readonly productNameInput = 'input[id="Serenity_Demo_Northwind_ProductDialog13_ProductName"]';
+  private readonly productNameInput = 'input[name="ProductName"]';
   private readonly supplierSelect = '#select2-chosen-4';
   private readonly supplierInput = 'input[id="s2id_autogen4_search"]';
   private readonly categorySelect = '#select2-chosen-5';
@@ -80,7 +80,6 @@ export class ProductPage extends BasePage {
 
   async updateProduct(originalName: string, updatedProduct: Product): Promise<void> {
     await this.clickInProduct(originalName);
-    await this.page.waitForSelector(this.productNameInput);
     await this.fill(this.productNameInput, updatedProduct.name);
     await this.click(this.saveButton);
     await this.waitForPageLoad();

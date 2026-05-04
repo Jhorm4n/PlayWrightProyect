@@ -1,15 +1,41 @@
 {
   "compilerOptions": {
+    // Versión de JavaScript que genera TypeScript (permite async/await moderno)
     "target": "ES2020",
+
+    // Usa el sistema de módulos moderno (import / export)
     "module": "ESNext",
+
+    // Resuelve imports como Node.js
     "moduleResolution": "Node",
+
+    // Activa tipado estricto (detecta errores reales antes de ejecutar)
     "strict": true,
+
+    // Permite importar librerías CommonJS como ES Modules, sistemas moderno de módulos de JavaScript para import y require
     "esModuleInterop": true,
+
+    // Permite importar archivos .json
     "resolveJsonModule": true,
+
+    // No valida tipos dentro de node_modules (menos ruido, más rápido)
     "skipLibCheck": true,
+
+    // Evita errores por mayúsculas/minúsculas en nombres de archivos (importante en CI/Linux)
     "forceConsistentCasingInFileNames": true,
+
+    // Librerías globales disponibles (JS moderno + DOM del navegador)
     "lib": ["ES2020", "DOM"],
+
+    // Tipos globales disponibles en el proyecto (Node + Playwright)
     "types": ["node", "@playwright/test"]
   },
-  "include": ["tests", "pages", "models", "playwright.config.ts"]
+
+  // Carpetas y archivos que TypeScript debe analizar
+  "include": [
+    "tests",                 // specs y tests
+    "pages",                 // Page Objects
+    "models",                // modelos de datos
+    "playwright.config.ts"   // configuración de Playwright
+  ]
 }

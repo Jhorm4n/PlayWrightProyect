@@ -85,7 +85,7 @@
           "column": 6,
           "specs": [
             {
-              "title": "Given the administrator is on the Products page\n    And the administrator is on the Products page\n    When the administrator selects a product to delete\n    Then the product should be removed from the product list successfully",
+              "title": "Given the administrator is on the Products page\n    And the administrator is on the Products page\n    When the administrator selects a product to update\n    Then the product should be updated in the product list successfully",
               "ok": true,
               "tags": [],
               "tests": [
@@ -97,10 +97,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 16,
+                      "workerIndex": 25,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 14213,
+                      "duration": 10572,
                       "errors": [],
                       "stdout": [
                         {
@@ -112,7 +112,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-03T01:13:45.517Z",
+                      "startTime": "2026-05-04T16:36:22.933Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -120,9 +120,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "48fc8e52f594af257b5a-5dfb403fa1814c68c19c",
+              "id": "48fc8e52f594af257b5a-31be42367c8f44b4e6b2",
               "file": "productManagement.spec.ts",
-              "line": 17,
+              "line": 41,
               "column": 14
             }
           ]
@@ -132,8 +132,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-03T01:13:43.544Z",
-    "duration": 16782.982000023127,
+    "startTime": "2026-05-04T16:36:21.436Z",
+    "duration": 12814.988999962807,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
