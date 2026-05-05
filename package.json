@@ -7,7 +7,7 @@
     "validate": "npm run typecheck && npm run lint",
     "test": "npm run validate && playwright test",
     "test:headed": "npm run validate && playwright test --headed",
-    "lint": "eslint tests/ playwright.config.ts",
+    "lint": "eslint tests/ models/ pages/ helpers/ fixtures/ playwright.config.ts",
     "typecheck": "tsc --noEmit",
     "test:report": "npx playwright show-report",
     "prepare": "npx playwright install --with-deps"

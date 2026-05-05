@@ -1,8 +1,8 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="14.289519999999998">
-<testsuite name="productManagement.spec.ts" timestamp="2026-05-04T22:03:55.789Z" hostname="chromium" tests="3" failures="0" skipped="0" time="35.636" errors="0">
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="14.896657000000001">
+<testsuite name="productManagement.spec.ts" timestamp="2026-05-05T14:06:41.278Z" hostname="chromium" tests="3" failures="0" skipped="0" time="35.888" errors="0">
 <testcase name="Feature: Product Management › Given the administrator navigates to the Add Product page
     When the administrator enters valid product information
-    Then the new product should appear in the product list successfully" classname="productManagement.spec.ts" time="10.799">
+    Then the new product should appear in the product list successfully" classname="productManagement.spec.ts" time="11.255">
 <system-out>
 <![CDATA[Logging in with user: admin
 Logging in with password: ********
@@ -12,7 +12,7 @@ Logging in with password: ********
 <testcase name="Feature: Product Management › Given the administrator is on the Products page
     And the administrator is on the Products page
     When the administrator selects a product to delete
-    Then the product should be removed from the product list successfully" classname="productManagement.spec.ts" time="12.616">
+    Then the product should be removed from the product list successfully" classname="productManagement.spec.ts" time="12.806">
 <system-out>
 <![CDATA[Logging in with user: admin
 Logging in with password: ********
@@ -22,7 +22,7 @@ Logging in with password: ********
 <testcase name="Feature: Product Management › Given the administrator is on the Products page
     And the administrator is on the Products page
     When the administrator selects a product to update
-    Then the product should be updated in the product list successfully" classname="productManagement.spec.ts" time="12.221">
+    Then the product should be updated in the product list successfully" classname="productManagement.spec.ts" time="11.827">
 <system-out>
 <![CDATA[Logging in with user: admin
 Logging in with password: ********
